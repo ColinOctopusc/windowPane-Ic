@@ -1,0 +1,220 @@
+
+
+
+
+<html>
+  <head>
+<style>
+.container
+{
+  position:relative;
+  width:80%;
+  height:70%;
+  margin:0 auto;
+  overflow:hidden;
+  background:grey;
+  border:10px solid grey;
+}
+
+.container div
+{
+  border-radius:5px;
+  position:absolute;
+  background-color:white;
+  opacity:.6;
+  -webkit-transition:
+  all .5s ease-in;
+}
+.a
+{
+  background-image:url('mountEmi10.jpg');
+  background-position:0px 0px;
+  left:0%;
+  top:0%;
+  width:100%;
+  height:8%;
+}
+.b
+{
+  background-image:url('mountEmi01.jpg');
+  background-position:0% 20%;
+  left:0%;
+  top:10%;
+  width:15%;
+  height:30%;
+}
+
+.c
+{
+  background-image:url('mountEmi03.jpg');
+  background-position:16% 10%;
+  left:16%;
+  top:10%;
+  width:10%;
+  height:40%;
+}
+.d
+{
+  background-image:url('mountEmi07.jpg');
+  background-position:0px 0px;
+  left:27%;
+  top:10%;
+  width:24%;
+  height:20%;
+}
+.e
+{
+  background-image:url('mountEmi08.jpg');
+  background-position:0px 0px;
+  left:52%;
+  top:10%;
+  width:15%;
+  height:20%;
+}
+.f
+{
+  background-image:url('mountEmi06.jpg');
+  background-position:0px 0px;
+  left:68%;
+  top:10%;
+  width:10%;
+  height:60%;
+
+}
+.g
+{
+  background-image:url('mountEmi04.jpg');
+  background-position:79% 10%;
+  left:79%;
+  top:10%;
+  width:21%;
+  height:29%;
+}
+
+
+.h
+{
+  background-image:url('mountEmi04.jpg');
+  background-position:-270px -160px;
+  left:27%;
+  top:32%;
+  width:40%;
+  height:18%;
+}
+.i
+{
+  background-image:url('mountEmi02.jpg');
+  background-position:0px 0px;
+  left:0%;
+  top:42%;
+  width:15%;
+  height:28%;
+}
+.j
+{
+  background-image:url('mountEmi05.jpg');
+  background-position:0px 0px;
+  left:79%;
+  top:41%;
+  width:21%;
+  height:29%;
+}
+.k
+{
+  background-image:url('mountEmi05.jpg');
+  background-position:0px 0px;
+  left:16%;
+  top:52%;
+  width:30%;
+  height:18%;
+}
+.l
+{
+  background-image:url('mountEmi09.jpg');
+  background-position:0px 0px;
+  left:47%;
+  top:52%;
+  width:20%;
+  height:18%;
+}
+.m
+{
+  background-image:url('mountEmi05.jpg');
+  background-size:100%;
+  background-position:0px 0px;
+  left:0%;
+  top:72%;
+  width:100%;
+  height:28%;
+}
+
+.clicked
+{
+  left:0px;
+  top:0px;
+  width:100%;
+  height:100%;
+  background-position:0px 0px;
+  z-index:1000;
+
+}
+</style>
+    
+  </head>
+ 
+ <body>
+<div class="container">
+  <div class="pane a"></div>
+  <div class="pane b"></div>
+  <div class="pane c"></div>
+  <div class="pane d"></div>
+  <div class="pane e"></div>
+  <div class="pane f"></div>
+  <div class="pane g"></div>
+  <div class="pane h"></div>
+  <div class="pane i"></div>
+  <div class="pane j"></div>
+  <div class="pane k"></div>
+  <div class="pane l"></div>
+  <div class="pane m"></div>  
+</div>
+ </body>
+ <script src="jQuery.js"></script>
+<script>
+$( document ).ready(function() {
+
+  // this is finding out the width of the container
+  var containerWidth = $('.container' ).width();
+  var containerHeight = $('.container' ).height();
+  var heeeEight = 'auto' + ' ' + containerHeight;
+
+
+  if( containerWidth > containerHeight)
+  {
+  $('.pane').css('background-size',containerWidth);
+  }
+  else
+  {
+  $('.pane').css('background-size',heeeEight);
+  }
+
+
+$(".container div").hover(function()
+{
+  $(this).css('opacity','1');
+},
+  function(){$(this).css('opacity','0.5');
+}
+
+);
+$(".container div").click(function()
+{
+  $(this).toggleClass('clicked');
+});
+
+});//document.done!
+
+</script>
+
+
+</html>
