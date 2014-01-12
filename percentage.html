@@ -183,6 +183,16 @@
 <script>
 $( document ).ready(function() {
 
+
+    var p = $('.pane');
+    var position = p.position();
+    var lefty = position.left;
+    var topsy = position.top;
+    var backPos = '-' + lefty + 'px' + ' ' + '-' + topsy + 'px';
+    console.log(backPos);
+    $(this).css('background-position',backPos);
+    
+
   // this is finding out the width of the container
   var containerWidth = $('.container' ).width();
   var containerHeight = $('.container' ).height();
@@ -196,7 +206,7 @@ $( document ).ready(function() {
   else
   {
   $('.pane').css('background-size',heeeEight);
-  }
+  };
 
 
 $(".container div").hover(function()
@@ -206,13 +216,78 @@ $(".container div").hover(function()
   function(){$(this).css('opacity','0.5');
 }
 
+
 );
+
+// this is how you are going to find out the  px about and left of an image corner and push push those values AS PIXELS into the background of that image.
+
+var panePos = $('.pane').position();
+var lefty = $(panePos.left);
+var topsy = $(panePos.top);
+
+
+
+
 $(".container div").click(function()
 {
   $(this).toggleClass('clicked');
 });
 
 });//document.done!
+
+
+
+  //background position == - (top value of pane) + px , - (left value of pane) + px
+
+  // var panePos = $('.a').position();
+  // console.log(panePos);
+  // var lefty = $(panePos.left);
+  // console.log(lefty);
+
+
+    //this was your fix for the background jumping up and down... it didn't work
+    // var p = $('.c');
+    // var position = p.position();
+    // var lefty = position.left;
+    // var topsy = position.top;
+    // console.log(lefty);
+    // console.log(topsy);
+    // var backPos = '-' + lefty + 'px' + ' ' + '-' + topsy + 'px';
+    // console.log(backPos);
+    // $('.pane').css('background-position',backPos);
+
+    //what
+  // $('.clicked').css('width',containerWidth);
+  // $('.clicked').css('height',containerHeight);
+
+
+
+
+
+//what a waste... all this to do toggleClass! Don't forget this dumbo!
+//   if(  containerWidth+'px' != ($(this).css('width'))   )
+//   {
+
+//   $(this).toggleClass('clicked');
+//   $('.clicked').css('width',containerWidth);
+//   $('.this').css('height',containerHeight);
+//   console.log('open');
+//   console.log(beforewidth);
+
+
+//   }
+//   else
+//   {
+
+//   var thumbWidth = $(that).width();
+//   var thumbHeight = $(that).height();
+//   $(this).removeClass('clicked');
+//   $(this).css('width',beforewidth);
+//   $(this).css('height',beforeheight);
+//   console.log(that);
+//   console.log('close');
+//   console.log(beforewidth);
+//   }
 
 </script>
 
